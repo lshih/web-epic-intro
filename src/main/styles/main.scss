@@ -1,0 +1,42 @@
+@import 'variables';
+@import 'colors';
+@import 'mixins';
+
+.application {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  background-color: $backgroundColor;
+  -webkit-overflow-scrolling: touch;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &.touch {
+    @media only screen
+      and (max-device-width: $pageMaxWidth)
+      and (max-device-height: $pageMaxHeight)
+      and (orientation:landscape) {
+      width: 100vh;
+      height: 100vw;
+
+      transform: rotate(-90deg);
+    }
+  }
+}
+
+button {
+  outline: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  background: none;
+  font-family: inherit;
+  font-size: inherit;
+}
+
+@import 'pages/page';

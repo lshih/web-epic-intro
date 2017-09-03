@@ -1,0 +1,74 @@
+.page {
+  position: relative;
+  width: 100%;
+  max-width: $pageMaxWidth;
+  height: 100%;
+  max-height: $pageMaxHeight;
+  padding: 20px;
+  box-sizing: border-box;
+  box-shadow: 3px 3px 12px 3px rgba(0, 0, 0, 0.5);
+  background-color: $pageBackgroundColor;
+
+  display: flex;
+  flex-direction: column;
+
+  &__header,
+  &__sub-header,
+  &__footer {
+    display: flex;
+  }
+
+  &__header,
+  &__sub-header,
+  &__footer {
+    flex-shrink: 0;
+  }
+
+  &__header,
+  &__footer {
+    height: 65px;
+  }
+
+  &__header,
+  &__sub-header {
+    color: $secondaryColor;
+    font-weight: bold;
+    font-size: 1.625em;
+
+    justify-content: center;
+  }
+
+  &__header {
+    align-items: flex-end;
+
+    &--large {
+      color: $mainColor;
+      font-size: 3.125em;
+    }
+  }
+
+  &__content {
+    overflow-y: auto;
+
+    flex: 1;
+  }
+
+  &__footer {
+    align-items: flex-start;
+
+    .footer {
+      &__back,
+      &__logout {
+        width: 60px;
+      }
+
+      &__content {
+        margin: 0 10px;
+
+        display: flex;
+        justify-content: center;
+        flex: 1;
+      }
+    }
+  }
+}
