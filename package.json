@@ -13,6 +13,10 @@
     "type": "git",
     "url": "git@github.com:lshih/web-epic-intro.git"
   },
+  "browserslist": [
+    "> 5%",
+    "last 2 major versions"
+  ],
   "keywords": [],
   "author": "Lejun Shih",
   "license": "ISC",
