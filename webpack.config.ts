@@ -79,19 +79,15 @@ export default {
       },
       {
         test: /\.s?css$/,
-        loader: ExtractTextPlugin.extract([
+        loader: ['webpack-extract-css-hot-reload'].concat(ExtractTextPlugin.extract([
           {
             loader: 'css-loader',
           }, {
             loader: 'postcss-loader',
           }, {
             loader: 'sass-loader',
-            // options: {
-            // includePaths: [bourbon.includePaths],
-            // data: Object.keys(assets).map((name) => `$${name}: url(\'${assets[name]}\');`).join(''),
-            // },
           },
-        ]),
+        ]) as any),
       },
       {
         test: /\.(eot|svg|ttf|otf|woff|woff2)$/,

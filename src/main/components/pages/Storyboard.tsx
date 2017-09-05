@@ -15,11 +15,11 @@ export default (props: IProps) => {
     <div
       {...otherProps}
       className={classnames({
-        page: true,
         [className as string]: !!className,
       })}
     >
       {children}
+      <div className="test" />
     </div>
   );
 };

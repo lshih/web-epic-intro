@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { RouteComponentProps } from 'react-router-dom';
-import Page from './Page';
+import Storyboard from './Storyboard';
 
 export default (props: RouteComponentProps<{}>) => (
-  <Page className="home-page" />
+  <Storyboard className="storyboard" />
 );
