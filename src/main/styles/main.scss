@@ -1,12 +1,13 @@
 @import 'variables';
 @import 'colors';
 @import 'mixins';
-
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -21,9 +22,17 @@ html {
   right: 0;
   background-color: $backgroundColor;
   -webkit-overflow-scrolling: touch;
-
+  .stacked {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+  }
   @import 'pages/storyboard';
   @import 'scenes/scene1';
+  @import 'tricone';
 }
 
 button {

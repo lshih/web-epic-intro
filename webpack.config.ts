@@ -100,6 +100,7 @@ export default {
   },
   devServer: {
     contentBase: path.join(__dirname, 'public'),
+    disableHostCheck: true,
   },
   plugins: [
     new ExtractTextPlugin({

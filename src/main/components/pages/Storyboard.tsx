@@ -5,21 +5,36 @@ import * as classnames from 'classnames';
 import {
 } from '../';
 
+import {
+  Scene1,
+} from '../scenes';
+
+interface IState {
+  scene: number;
+}
+
 interface IProps extends React.HTMLProps<HTMLDivElement> {
 }
 
-export default (props: IProps) => {
-  const { className, children, ...otherProps } = props;
+export default class Storyboard extends React.Component<IProps, IState> {
+  public componentWillMount() {
+    this.state = {
+      scene: 1,
+    };
+  }
 
-  return (
-    <div
-      {...otherProps}
-      className={classnames({
-        [className as string]: !!className,
-      })}
-    >
-      {children}
-      <div className="test" />
-    </div>
-  );
-};
+  public render() {
+    const { className, ...otherProps } = this.props;
+
+    return (
+      <div
+        {...otherProps}
+        className={classnames({
+          [className as string]: !!className,
+        })}
+      >
+        {this.state.scene === 1 && <Scene1 />}
+      </div>
+    );
+  }
+}
