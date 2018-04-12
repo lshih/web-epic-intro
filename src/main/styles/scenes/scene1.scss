@@ -4,6 +4,19 @@
   height: 100%;
   position: relative;
   animation: shakeDelay 3s infinite linear 0.5s;
+  .double-arrow {
+    width: $scene1ShapeSize + 150px;
+    height: $scene1ShapeSize + 150px;
+    background-position: center;
+    background-size: cover;
+    background-image: url('/assets/double-arrow.svg');
+    opacity: 0.6;
+    animation: fade 2.3s infinite alternate, rotationPulse 2s infinite linear;
+
+    &--delay {
+      animation-delay: 0.5s;
+    }
+  }
   .bar {
     width: $scene1ShapeSize + 50px;
     height: 150px;
@@ -60,34 +73,15 @@
     }
   }
   .main-character {
-    width: 100px;
-    height: 20px;
-    border-radius: 50%;
-    box-shadow: 0 0 30px 30px white;
-    background-color: white;
+    width: 150px;
+    height: 150px;
+    background-size: cover;
+    background-image: url(/assets/portal.svg);
     animation: rotationPulse 3s infinite reverse cubic-bezier(0.2, 0.3, 0.4, 0.3), shallowFade 1.2s infinite alternate ease-in;
-    &::after,
-    &::before {
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      content: '';
-      background-color: white;
-      box-shadow: 0 0 30px 30px white;
-      border-radius: 45%;
-    }
-    &::after {
-      left: 2px;
-      right: 2px;
-      transform: rotate(60deg);
-    }
-    &::before {
-      left: 3px;
-      right: 3px;
-      top: 1px;
-      transform: rotate(-60deg);
+
+    &--reverse {
+      animation-delay: 1s;
+      animation: rotationPulse 2.5s infinite cubic-bezier(0.3, 0.2, 0.5, 0.2), shallowFade 1.4s infinite alternate ease-in;
     }
   }
 }

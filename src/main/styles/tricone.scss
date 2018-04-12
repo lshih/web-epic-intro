@@ -10,7 +10,6 @@
   animation: rotationPulse 0.8s infinite linear;
   @for $i from 1 through 20 {
     &:nth-child(n+#{$i}) {
-      // animation-delay: (random(50) / 100) + 0.1s;
       animation-duration: (random(150)/ 100)+(($i * 0.7s) % 1);
       @if ($i % 9==0) {
         animation-direction: reverse;
